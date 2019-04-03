@@ -1,18 +1,24 @@
-/*
- * WS2812B.c
- *
- * Created: 31.03.2019 20:17:45
- * Author : Александр
- */ 
+//This example lights 100 LEDs in green
 
-#include <avr/io.h>
-
+#include "ws2812b.h"
 
 int main(void)
 {
-    /* Replace with your application code */
-    while (1) 
-    {
-    }
-}
+	initLEDs();
+	
+	uint8_t red = 0;
+	uint8_t green = 255;
+	uint8_t blue = 0;
 
+	for (uint8_t i = 0; i < 100; ++i)
+	{
+		setColor(red, green, blue);
+	}
+
+	flush();
+
+	while (1)
+	{
+		
+	}
+}
